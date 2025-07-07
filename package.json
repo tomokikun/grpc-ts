@@ -1,0 +1,33 @@
+{
+  "name": "grpc-ts",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "pregenerate": "rm -rf generate && mkdir generate",
+    "generate": "grpc_tools_node_protoc --js_out=import_style=commonjs,binary:./generate --grpc_out=grpc_js:./generate --ts_out=grpc_js:./generate -I ./proto ./proto/*.proto",
+    "start": "ts-node src/server.ts"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/tomokikun/grpc-ts.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/tomokikun/grpc-ts/issues"
+  },
+  "homepage": "https://github.com/tomokikun/grpc-ts#readme",
+  "dependencies": {
+    "@grpc/grpc-js": "^1.13.4",
+    "@types/google-protobuf": "^3.15.12",
+    "google-protobuf": "^3.21.4",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.8.3"
+  },
+  "devDependencies": {
+    "grpc_tools_node_protoc_ts": "^5.3.3",
+    "grpc-tools": "^1.13.0"
+  }
+}
